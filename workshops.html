@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fdfaf3">
+  <meta name="description" content="Explore aeromodelling and system engineering through introductory lectures, aircraft model building and flying at IIT Kanpur.">
+
+  <title>Workshops | Boeing National Aeromodelling Festival 2027</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
+<style>
+.workshop-overview{max-width:1100px;margin:0 auto}
+.workshop-overview .section-heading{display:block;margin-bottom:30px}
+.workshop-overview .page-title{margin:0;font-size:clamp(3.5rem,6vw,5.5rem)}
+.fact-bar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0 0 36px;padding:0;background:var(--white);border:1px solid var(--sand);border-top:3px solid var(--gold);border-radius:14px;box-shadow:0 14px 34px #10264d12;overflow:hidden}
+.fact-bar>div{padding:20px 24px;border-left:1px solid var(--sand)}
+.fact-bar>div:first-child{border-left:0}
+.fact-bar dt{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+.fact-bar dd{margin:6px 0 0;font-size:1.15rem;font-weight:700;color:var(--navy)}
+.workshop-introduction{margin-bottom:38px}
+.workshop-introduction p{margin:0;color:var(--ink);font-size:1.25rem;line-height:1.8;max-width:900px}
+.workshop-points-title{margin:0 0 24px;color:var(--blue-700);font:700 1.5rem/1.4 var(--body);letter-spacing:0}
+.workshop-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:0;padding:0;list-style:none}
+.workshop-points>li{position:relative;padding:28px 28px 30px;background:var(--white);border:1px solid var(--sand);border-top:3px solid var(--gold);border-radius:14px;box-shadow:0 12px 30px #10264d10;transition:transform .3s ease,box-shadow .3s ease}
+.workshop-points>li:hover{transform:translateY(-4px);box-shadow:0 20px 40px #10264d1c}
+.workshop-points h3{margin:0 0 10px;color:var(--navy);font:700 1.25rem/1.4 var(--body);letter-spacing:0}
+.workshop-points p{margin:0;color:var(--muted);font-size:1.05rem;line-height:1.75}
+.workshop-closing{margin-top:34px;padding:26px 30px;border-radius:14px;background:linear-gradient(135deg,#10264d,#1f4a8f);box-shadow:0 20px 44px #10264d2e}
+.workshop-closing p{margin:0;color:#e6eefb;font-size:1.1rem;line-height:1.8}
+.workshop-registration{display:flex;justify-content:flex-start;margin-top:30px}
+@media(max-width:900px){.fact-bar{grid-template-columns:repeat(2,minmax(0,1fr))}.fact-bar>div:nth-child(3){border-left:0}.fact-bar>div:nth-child(n+3){border-top:1px solid var(--sand)}}
+@media(max-width:820px){.workshop-points{grid-template-columns:1fr}.workshop-introduction p{font-size:1.08rem}.workshop-points p,.workshop-closing p{font-size:1rem}.workshop-points-title{font-size:1.25rem}.workshop-points h3{font-size:1.12rem}.workshop-closing{padding:22px}}
+@media(prefers-reduced-motion:reduce){.workshop-points>li{transition:none}.workshop-points>li:hover{transform:none}}
+.workshop-schedule{margin-top:48px}
+.workshop-schedule>h2,.workshop-terms>h2{margin:0 0 10px;color:var(--blue-700);font:700 1.5rem/1.4 var(--body);letter-spacing:0}
+.workshop-schedule>p{margin:0 0 26px;max-width:760px;font-size:1.05rem;line-height:1.75}
+.timeline{list-style:none;margin:0;padding:0 0 0 34px;position:relative}
+.timeline:before{content:'';position:absolute;left:9px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--blue-500),var(--gold))}
+.timeline>li{position:relative;padding:24px 28px;background:var(--white);border:1px solid var(--sand);border-top:3px solid var(--gold);border-radius:14px;box-shadow:0 12px 30px #10264d10}
+.timeline>li+li{margin-top:20px}
+.timeline>li:before{content:'';position:absolute;left:-33px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--cream);border:3px solid var(--blue-500)}
+.timeline h3{margin:0;color:var(--navy);font:700 1.25rem/1.4 var(--body);letter-spacing:0}
+.timeline .day-sub{margin:2px 0 14px;color:var(--gold-deep);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.timeline ul{margin:0;padding-left:20px;color:var(--muted);font-size:1.05rem;line-height:1.75}
+.timeline ul li+li{margin-top:4px}
+.workshop-terms{margin-top:48px;scroll-margin-top:24px}
+.table-scroll{overflow-x:auto;margin:0 0 26px;background:var(--white);border:1px solid var(--sand);border-top:3px solid var(--gold);border-radius:14px;box-shadow:0 12px 30px #10264d10}
+.stay-table{width:100%;min-width:620px;border-collapse:collapse;font-size:1rem}
+.stay-table th,.stay-table td{padding:14px 20px;text-align:left;border-top:1px solid var(--sand);color:var(--muted);vertical-align:top}
+.stay-table thead th{border-top:0;background:var(--beige);color:var(--navy);font-weight:700}
+.stay-table tbody th{color:var(--navy);font-weight:700;white-space:nowrap}
+.stay-table .no{color:var(--gold-deep);font-weight:700}
+.terms-list{margin:0;padding:0;list-style:none;counter-reset:term;display:grid;gap:14px}
+.terms-list>li{counter-increment:term;position:relative;padding:20px 24px 20px 64px;background:var(--white);border:1px solid var(--sand);border-radius:12px;color:var(--muted);font-size:1.05rem;line-height:1.75}
+.terms-list>li:before{content:counter(term);position:absolute;left:22px;top:20px;width:28px;height:28px;border-radius:50%;background:var(--blue-700);color:#fff;font:700 .85rem/28px var(--body);text-align:center}
+.terms-list strong{color:var(--navy)}
+@media(max-width:600px){.timeline{padding-left:28px}.timeline>li{padding:20px}.timeline>li:before{left:-27px}.terms-list>li{padding:18px 18px 18px 56px}.terms-list>li:before{left:16px;top:18px}}
+</style>
+</head>
+
+<body class="theme-workshops">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="ambient-light" aria-hidden="true"></div>
+
+  <header class="header">
+
+<a class="brand" href="index.html" aria-label="Boeing National Aeromodelling Festival 2027 home"><span class="brand-title">Boeing National Aeromodelling Festival 2027</span><small>AEROMODELLING CLUB,IIT KANPUR X TECHKRITI'27 </small></a>
+
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Explore <span class="menu-bars" aria-hidden="true"></span></button>
+
+<nav id="navigation" aria-label="Main navigation"><a href="workshops.html" aria-current="page">Workshops</a><a href="gallery.html">Gallery</a><a href="team.html">Team</a><a href="faq.html">FAQs</a><a class="button small" href="register.html">Register</a></nav>
+
+</header>
+
+  <main id="main">
+    <div class="page-breadcrumb mono">
+      <a href="index.html">HOME</a>
+      <span>/</span>
+      WORKSHOPS
+    </div>
+
+    <section
+      class="section workshops"
+      id="workshops"
+      aria-labelledby="workshop-title"
+    >
+      <div class="workshop-overview">
+        <div class="section-heading">
+          <h1 class="page-title" id="workshop-title">
+            Learn. Build.<br>
+            <em>Take flight.</em>
+          </h1>
+        </div>
+
+        <dl class="fact-bar">
+          <div><dt>Dates</dt><dd>28th–29th November 2026</dd></div>
+          <div><dt>Venue</dt><dd>IIT Kanpur</dd></div>
+          <div><dt>Registration fee</dt><dd>None</dd></div>
+          <div><dt>Team size</dt><dd>4–5 students</dd></div>
+        </dl>
+
+        <div class="workshop-introduction">
+          <p>
+            The workshop introduces you to the festival and to the field
+            of aeromodelling and systems engineering. It combines
+            introductory lectures from professors with hands-on
+            experience of building an aircraft model and flying it.
+          </p>
+        </div>
+
+        <h2 class="workshop-points-title">
+          What to expect at IIT Kanpur
+        </h2>
+
+        <ul class="workshop-points">
+          <li>
+            <h3>Understand the event</h3>
+            <p>
+              Learn how the event is structured, what you can expect to
+              gain from taking part, and how to participate. A clear
+              picture of its structure and overall scope helps your team
+              prepare well.
+            </p>
+          </li>
+
+          <li>
+            <h3>No prior experience required</h3>
+            <p>
+              The workshop opens aeromodelling to students from every
+              stream and background. You do not need any prior
+              experience to join.
+            </p>
+          </li>
+
+          <li>
+            <h3>Explore the competition and RC glider design</h3>
+            <p>
+              Get a detailed walkthrough of the competition problem
+              statement, along with a presentation on the design of an
+              RC glider.
+            </p>
+          </li>
+
+          <li>
+            <h3>Learn aircraft design and modelling</h3>
+            <p>
+              If you want to understand how modern aircraft are designed
+              and modelled, this workshop offers a strong foundation and
+              a significant learning experience.
+            </p>
+          </li>
+        </ul>
+
+        <div class="workshop-closing">
+          <p>
+            The workshops also include a networking session with
+            aeromodelling enthusiasts from across the country. We look
+            forward to welcoming aspiring aeromodeller in large
+            numbers.
+          </p>
+        </div>
+
+        <section class="workshop-schedule" id="timeline" aria-labelledby="timeline-title">
+          <h2 id="timeline-title">Workshop Timeline</h2>
+          <p>The workshop runs across 28th and 29th November 2026 at IIT Kanpur. Participants with confirmed selection are accommodated from the night of 27th November.</p>
+
+          <ol class="timeline">
+            <li>
+              <h3>27th November 2026</h3>
+              <p class="day-sub">Arrival</p>
+              <ul>
+                <li>Participants move into their allocated stays.</li>
+                <li>Dinner is served at the allocated stay.</li>
+              </ul>
+            </li>
+            <li>
+              <h3>28th November 2026</h3>
+              <p class="day-sub">Day 1</p>
+              <ul>
+                <li>Breakfast at the allocated stay.</li>
+                <li>The workshop begins early in the morning.</li>
+                <li>Lunch at the workshop venue.</li>
+                <li>Sessions continue until the evening.</li>
+                <li>Participants then move to their allocated stays, where dinner is served.</li>
+              </ul>
+            </li>
+            <li>
+              <h3>29th November 2026</h3>
+              <p class="day-sub">Day 2 and departure</p>
+              <ul>
+                <li>Breakfast at the allocated stay.</li>
+                <li>The workshop resumes early in the morning.</li>
+                <li>Lunch at the workshop venue.</li>
+                <li>The workshop concludes in the early evening.</li>
+                <li>Participants vacate their allocated stays and leave the IIT Kanpur campus. Dinner and accommodation are not provided on this day.</li>
+              </ul>
+            </li>
+          </ol>
+        </section>
+
+        <section class="workshop-terms" id="terms" aria-labelledby="terms-title">
+          <h2 id="terms-title">Workshop Details: Terms and Conditions</h2>
+
+          <div class="table-scroll">
+            <table class="stay-table">
+              <thead>
+                <tr><th scope="col"></th><th scope="col">27th Nov</th><th scope="col">28th Nov</th><th scope="col">29th Nov</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Accommodation</th><td>Provided (night)</td><td>Provided (night)</td><td class="no">Not provided</td></tr>
+                <tr><th scope="row">Breakfast</th><td>Not applicable</td><td>Allocated stay</td><td>Allocated stay</td></tr>
+                <tr><th scope="row">Lunch</th><td>Not applicable</td><td>Workshop venue</td><td>Workshop venue</td></tr>
+                <tr><th scope="row">Dinner</th><td>Allocated stay</td><td>Allocated stay</td><td class="no">Not provided</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <ol class="terms-list">
+            <li><strong>Schedule.</strong> The workshop commences early on the morning of 28th November 2026 and continues until the evening of that day. It resumes early on the morning of 29th November 2026 and concludes in the early evening of that day.</li>
+            <li><strong>Accommodation.</strong> Accommodation is provided to participants for the nights of 27th November 2026 and 28th November 2026 only, at stays allocated by the organisers. No accommodation is provided on the night of 29th November 2026.</li>
+            <li><strong>Meals on 27th November.</strong> Dinner is provided at the participant’s allocated stay.</li>
+            <li><strong>Meals on 28th November.</strong> Breakfast is provided at the allocated stay, lunch at the workshop venue, and dinner at the allocated stay, to which participants proceed at the end of the day’s sessions.</li>
+            <li><strong>Meals on 29th November.</strong> Breakfast is provided at the allocated stay and lunch at the workshop venue. Dinner is not provided.</li>
+            <li><strong>Departure.</strong> Upon conclusion of the workshop on 29th November 2026, participants are required to vacate their allocated stays and leave the IIT Kanpur campus.</li>
+          </ol>
+        </section>
+
+        <div class="workshop-registration">
+          <a class="button" href="register.html">
+            Register now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-next">
+      <span class="mono">KEEP EXPLORING</span>
+      <a href="gallery.html">Gallery ↗</a>
+    </div>
+  </main>
+
+  <footer class="techkriti-footer">
+  <div class="flight-lane" aria-hidden="true">
+    <span class="lane-line"></span>
+    <span class="lane-plane p1"><svg viewBox="0 0 64 40" focusable="false" aria-hidden="true"><path d="M61 20c0-2-3-3-6-3H39L25 2h-8l8 15H12L6 9H1l4 11-4 11h5l6-8h13l-8 15h8l14-15h16c3 0 6-1 6-3Z"/></svg></span>
+    <span class="lane-plane p2"><svg viewBox="0 0 64 40" focusable="false" aria-hidden="true"><path d="M61 20c0-2-3-3-6-3H39L25 2h-8l8 15H12L6 9H1l4 11-4 11h5l6-8h13l-8 15h8l14-15h16c3 0 6-1 6-3Z"/></svg></span>
+    <span class="lane-plane p3"><svg viewBox="0 0 64 40" focusable="false" aria-hidden="true"><path d="M61 20c0-2-3-3-6-3H39L25 2h-8l8 15H12L6 9H1l4 11-4 11h5l6-8h13l-8 15h8l14-15h16c3 0 6-1 6-3Z"/></svg></span>
+  </div>
+
+  <div class="tf-grid">
+    <div class="tf-about">
+      <p class="tf-title">Boeing National Aeromodelling Festival 2027</p>
+      <p class="tf-presented">Presented by the Aeromodelling Club, IIT Kanpur, in association with <a href="https://techkriti.org/" target="_blank" rel="noopener noreferrer">Techkriti ’27</a>.</p>
+      <p class="tf-meta">28th–29th November 2026, IIT Kanpur</p>
+    </div>
+
+    <nav class="tf-col" aria-labelledby="tf-quick">
+      <h2 class="tf-heading" id="tf-quick">Quick Links</h2>
+      <ul class="tf-list tf-links-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workshops.html">Workshops</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+
+    <div class="tf-col">
+      <h2 class="tf-heading" id="tf-follow">Follow Us</h2>
+      <ul class="tf-list tf-social">
+        <li><a href="https://www.instagram.com/boeing_fes.iitkanpur?stkn=b3hxc285cGUwdHU4/" target="_blank" rel="noopener noreferrer" aria-label="Instagram: @boeing_fes_iitk"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@boeing_fes_iitk</span></a></li>
+        <li><a href="https://www.instagram.com/aero_club_iitk?stkn=MXhlc2lqOWwxZTV2Yg==/" target="_blank" rel="noopener noreferrer" aria-label="Instagram: @aero_club_iitk"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@aero_club_iitk</span></a></li>
+        <li><a href="https://www.instagram.com/techkriti.iitk?stkn=a3dnM20zMXR4cjg1/" target="_blank" rel="noopener noreferrer" aria-label="Instagram: @techkriti_iitk"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>@techkriti_iitk</span></a></li>
+      </ul>
+      <h2 class="tf-heading" id="tf-follow" style="margin-top: 40px;">Contact Us</h2>
+
+<ul class="tf-list tf-social">
+    <li>
+        <a href="mailto:aeroclub_snt@iitk.ac.in" aria-label="Email Aeromodelling Club IIT Kanpur">
+            <i class="fa-solid fa-envelope"></i>
+            <span>aeroclub_snt@iitk.ac.in</span>
+        </a>
+    </li>
+</ul>
+    </div>
+  </div>
+
+  <div class="tf-bottom">
+    <p>© 2027 IIT Kanpur. All rights reserved.</p>
+    <a class="tf-top-link" href="#main">Back to top ↑</a>
+  </div>
+</footer>
+</body>
+</html>
